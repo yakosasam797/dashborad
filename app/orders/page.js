@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const ordersData = [
     { id: 'ORD-10001', type: 'Bulk', product: 'Welcome Kit', qty: 500, deadline: 'May 22, 2025', status: 'New', client: 'Acme Corp', amount: '₹12,50,000' },
@@ -144,7 +145,7 @@ export default function OrdersPage() {
                                     <td>{order.deadline}</td>
                                     <td style={{ fontWeight: 600 }}>{order.amount}</td>
                                     <td><span className="status-badge"><span className={`status-dot ${getStatusClass(order.status)}`} />{order.status}</span></td>
-                                    <td><button className="view-btn gold">View</button></td>
+                                    <td><Link href={`/orders/view/${order.id.replace('ORD-', '')}`} className="view-btn gold">View</Link></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -171,7 +172,7 @@ export default function OrdersPage() {
                                     <td>{sample.date}</td>
                                     <td>{sample.qty}</td>
                                     <td><span className="status-badge"><span className={`status-dot ${getStatusClass(sample.status)}`} />{sample.status}</span></td>
-                                    <td><div className="action-btns"><button className="view-btn gold">View</button></div></td>
+                                    <td><div className="action-btns"><Link href={`/orders/view/${sample.id}`} className="view-btn gold">View</Link></div></td>
                                 </tr>
                             ))}
                         </tbody>

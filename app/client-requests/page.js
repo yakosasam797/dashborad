@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const feedbackData = [
     { id: 'CR-001', client: 'Acme Corp', subject: 'Welcome Kit quality feedback', type: 'Feedback', rating: 4, date: 'May 14, 2025', status: 'Open', message: 'Great quality but packaging could improve.' },
@@ -70,7 +71,7 @@ export default function ClientRequestsPage() {
                                 <td><div className="stars">{renderStars(f.rating)}</div></td>
                                 <td>{f.date}</td>
                                 <td><span className="status-badge"><span className={`status-dot ${dot(f.status)}`} />{f.status}</span></td>
-                                <td><button className="view-btn gold">Respond</button></td>
+                                <td><Link href={`/client-requests/view/${f.id}`} className="view-btn gold">Respond</Link></td>
                             </tr>
                         ))}
                     </tbody>

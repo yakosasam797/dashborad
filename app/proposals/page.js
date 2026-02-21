@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const proposals = [
     { id: 'PRP-001', title: 'Corporate Gift Set 2025', client: 'Acme Corp', value: '₹15,00,000', status: 'Sent', date: 'May 10, 2025', validTill: 'Jun 10, 2025' },
@@ -49,8 +50,8 @@ export default function ProposalsPage() {
                         <div className="card-meta">Created: {p.date}</div>
                         <div className="card-meta">Valid Till: {p.validTill}</div>
                         <div className="card-actions">
-                            <button className="view-btn gold">View</button>
-                            <button className="view-btn" style={{ background: '#F3F4F6', color: '#6B7280' }}>Edit</button>
+                            <Link href={`/proposals/view/${p.id}`} className="view-btn gold">View</Link>
+                            <Link href={`/proposals/edit/${p.id}`} className="view-btn" style={{ background: '#F3F4F6', color: '#6B7280' }}>Edit</Link>
                         </div>
                     </div>
                 ))}

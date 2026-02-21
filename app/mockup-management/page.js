@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const mockupData = [
     { id: 'MK-001', type: 'Simple', product: 'Welcome Kit', client: 'Acme Corp', deadline: 'May 22', status: 'New', designer: 'Ravi K.' },
@@ -67,7 +68,7 @@ export default function MockupManagement() {
                             <tr key={i}>
                                 <td style={{ fontWeight: 600 }}>{m.id}</td><td>{m.type}</td><td>{m.product}</td><td>{m.client}</td><td>{m.designer}</td><td>{m.deadline}</td>
                                 <td><span className="status-badge"><span className={`status-dot ${dot(m.status)}`} />{m.status}</span></td>
-                                <td><div className="action-btns"><button className="view-btn gold">View</button><button className="view-btn red">Upload</button></div></td>
+                                <td><div className="action-btns"><Link href={`/mockup-management/view/${m.id}`} className="view-btn gold">View</Link><button className="view-btn red">Upload</button></div></td>
                             </tr>
                         ))}
                     </tbody>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const transactions = [
     { id: 'TXN-001', orderId: 'ORD-10001', client: 'Acme Corp', amount: '₹12,50,000', type: 'Invoice', method: 'Bank Transfer', date: 'May 15, 2025', status: 'Paid' },
@@ -75,7 +76,7 @@ export default function PaymentsPage() {
                                 <tr key={i}>
                                     <td style={{ fontWeight: 600 }}>{t.id}</td><td>{t.orderId}</td><td>{t.client}</td><td style={{ fontWeight: 600 }}>{t.amount}</td><td>{t.type}</td><td>{t.method}</td><td>{t.date}</td>
                                     <td><span className="status-badge"><span className={`status-dot ${dot(t.status)}`} />{t.status}</span></td>
-                                    <td><button className="view-btn gold">View</button></td>
+                                    <td><Link href={`/payments/view/${t.id}`} className="view-btn gold">View</Link></td>
                                 </tr>
                             ))}
                         </tbody>

@@ -27,109 +27,26 @@ const statCards = [
 ];
 
 const ordersData = [
-    { id: '100015', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: true, status: 'New', statusColor: 'new', client: 'Acme Corp', qty: 500, amount: '₹12,50,000' },
-    { id: '100016', type: 'Sample', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'Inprocess', statusColor: 'inprocess', client: 'TechStart', qty: 10, amount: '₹25,000' },
-    { id: '100017', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'Dispatched', statusColor: 'dispatched', client: 'GlobalTech', qty: 200, amount: '₹5,00,000' },
-    { id: '100018', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new', client: 'StartupHub', qty: 100, amount: '₹2,50,000' },
-    { id: '100019', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new', client: 'MegaCorp', qty: 350, amount: '₹8,75,000' },
-    { id: '100020', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new', client: 'InfoSys', qty: 150, amount: '₹3,75,000' },
-    { id: '100021', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new', client: 'FinFirst', qty: 80, amount: '₹2,00,000' },
-    { id: '100022', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new', client: 'EduTech', qty: 400, amount: '₹10,00,000' },
+    { id: '100015', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: true, status: 'New', statusColor: 'new' },
+    { id: '100016', type: 'Sample', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'Inprocess', statusColor: 'inprocess' },
+    { id: '100017', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'Dispatched', statusColor: 'dispatched' },
+    { id: '100018', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new' },
+    { id: '100019', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new' },
+    { id: '100020', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new' },
+    { id: '100021', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new' },
+    { id: '100022', type: 'Bulk', product: 'Welcome Kit', deadline: 'May 22', deadlineWarning: false, status: 'New', statusColor: 'new' },
 ];
 
 const mockupData = [
-    { id: '100015', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new', client: 'Acme Corp', designer: 'Ravi K.' },
-    { id: '100016', type: 'Full', product: 'Welcome Kit', deadline: 'May 22', status: 'Submitted', statusColor: 'submitted', client: 'TechStart', designer: 'Priya S.' },
-    { id: '100017', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'Feedback', statusColor: 'feedback', client: 'GlobalTech', designer: 'Amit P.' },
-    { id: '100018', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new', client: 'StartupHub', designer: 'Sneha R.' },
-    { id: '100019', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new', client: 'MegaCorp', designer: 'Vikram S.' },
-    { id: '100020', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new', client: 'InfoSys', designer: 'Ravi K.' },
-    { id: '100021', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new', client: 'FinFirst', designer: 'Priya S.' },
-    { id: '100022', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new', client: 'EduTech', designer: 'Amit P.' },
+    { id: '100015', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new' },
+    { id: '100016', type: 'Full', product: 'Welcome Kit', deadline: 'May 22', status: 'Submitted', statusColor: 'submitted' },
+    { id: '100017', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'Feedback', statusColor: 'feedback' },
+    { id: '100018', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new' },
+    { id: '100019', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new' },
+    { id: '100020', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new' },
+    { id: '100021', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new' },
+    { id: '100022', type: 'Simple', product: 'Welcome Kit', deadline: 'May 22', status: 'New', statusColor: 'new' },
 ];
-
-function CloseIcon() {
-    return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>;
-}
-
-function OrderDetailModal({ order, onClose }) {
-    if (!order) return null;
-    return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <div className="modal-header">
-                    <h2>Order Details — {order.id}</h2>
-                    <button className="modal-close" onClick={onClose}><CloseIcon /></button>
-                </div>
-                <div className="modal-body">
-                    <div className="detail-grid">
-                        <div className="detail-item"><span className="detail-label">Order ID</span><span className="detail-value">{order.id}</span></div>
-                        <div className="detail-item"><span className="detail-label">Order Type</span><span className="detail-value">{order.type}</span></div>
-                        <div className="detail-item"><span className="detail-label">Product</span><span className="detail-value">{order.product}</span></div>
-                        <div className="detail-item"><span className="detail-label">Client</span><span className="detail-value">{order.client}</span></div>
-                        <div className="detail-item"><span className="detail-label">Quantity</span><span className="detail-value">{order.qty}</span></div>
-                        <div className="detail-item"><span className="detail-label">Amount</span><span className="detail-value" style={{ fontWeight: 700, color: '#1A1A2E' }}>{order.amount}</span></div>
-                        <div className="detail-item"><span className="detail-label">Deadline</span><span className="detail-value" style={order.deadlineWarning ? { color: '#EF4444', fontWeight: 700 } : {}}>{order.deadline}</span></div>
-                        <div className="detail-item"><span className="detail-label">Status</span><span className="detail-value"><span className="status-badge"><span className={`status-dot ${order.statusColor}`} />{order.status}</span></span></div>
-                        <div className="detail-divider" />
-                        <div className="detail-item full-width">
-                            <span className="detail-label">Order Timeline</span>
-                            <div className="timeline">
-                                <div className="timeline-item"><span className="timeline-dot gold" /><span className="timeline-text"><strong>Order Created</strong> — Order was placed by {order.client}<span className="time">May 15, 2025</span></span></div>
-                                {order.status !== 'New' && <div className="timeline-item"><span className="timeline-dot blue" /><span className="timeline-text"><strong>Processing Started</strong> — Production began<span className="time">May 17, 2025</span></span></div>}
-                                {order.status === 'Dispatched' && <div className="timeline-item"><span className="timeline-dot green" /><span className="timeline-text"><strong>Dispatched</strong> — Shipped via courier<span className="time">May 20, 2025</span></span></div>}
-                                {order.status === 'New' && <div className="timeline-item"><span className="timeline-dot gray" /><span className="timeline-text">Awaiting processing</span></div>}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="modal-footer">
-                    <button className="btn-secondary" onClick={onClose}>Close</button>
-                    <button className="btn-primary">Update Status</button>
-                </div>
-            </div>
-        </div>
-    );
-}
-
-function MockupDetailModal({ mockup, onClose }) {
-    if (!mockup) return null;
-    return (
-        <div className="modal-overlay" onClick={onClose}>
-            <div className="modal-content" onClick={e => e.stopPropagation()}>
-                <div className="modal-header">
-                    <h2>Mockup Details — {mockup.id}</h2>
-                    <button className="modal-close" onClick={onClose}><CloseIcon /></button>
-                </div>
-                <div className="modal-body">
-                    <div className="detail-grid">
-                        <div className="detail-item"><span className="detail-label">Mockup ID</span><span className="detail-value">{mockup.id}</span></div>
-                        <div className="detail-item"><span className="detail-label">Custom Type</span><span className="detail-value">{mockup.type}</span></div>
-                        <div className="detail-item"><span className="detail-label">Product</span><span className="detail-value">{mockup.product}</span></div>
-                        <div className="detail-item"><span className="detail-label">Client</span><span className="detail-value">{mockup.client}</span></div>
-                        <div className="detail-item"><span className="detail-label">Designer</span><span className="detail-value">{mockup.designer}</span></div>
-                        <div className="detail-item"><span className="detail-label">Deadline</span><span className="detail-value">{mockup.deadline}</span></div>
-                        <div className="detail-item"><span className="detail-label">Status</span><span className="detail-value"><span className="status-badge"><span className={`status-dot ${mockup.statusColor}`} />{mockup.status}</span></span></div>
-                        <div className="detail-divider" />
-                        <div className="detail-item full-width">
-                            <span className="detail-label">Mockup Timeline</span>
-                            <div className="timeline">
-                                <div className="timeline-item"><span className="timeline-dot gold" /><span className="timeline-text"><strong>Request Created</strong> — Mockup requested by {mockup.client}<span className="time">May 14, 2025</span></span></div>
-                                {mockup.status === 'Submitted' && <div className="timeline-item"><span className="timeline-dot blue" /><span className="timeline-text"><strong>Design Submitted</strong> — First draft uploaded by {mockup.designer}<span className="time">May 18, 2025</span></span></div>}
-                                {mockup.status === 'Feedback' && <><div className="timeline-item"><span className="timeline-dot blue" /><span className="timeline-text"><strong>Design Submitted</strong><span className="time">May 18, 2025</span></span></div><div className="timeline-item"><span className="timeline-dot green" /><span className="timeline-text"><strong>Feedback Received</strong> — Client provided feedback<span className="time">May 20, 2025</span></span></div></>}
-                                {mockup.status === 'New' && <div className="timeline-item"><span className="timeline-dot gray" /><span className="timeline-text">Awaiting designer assignment</span></div>}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="modal-footer">
-                    <button className="btn-secondary" onClick={onClose}>Close</button>
-                    <button className="btn-primary">Upload Mockup</button>
-                </div>
-            </div>
-        </div>
-    );
-}
 
 export default function Dashboard() {
     const [orderTypeFilter, setOrderTypeFilter] = useState('All');
@@ -138,8 +55,6 @@ export default function Dashboard() {
     const [mockupStatusFilter, setMockupStatusFilter] = useState('All');
     const [orderSearch, setOrderSearch] = useState('');
     const [mockupSearch, setMockupSearch] = useState('');
-    const [selectedOrder, setSelectedOrder] = useState(null);
-    const [selectedMockup, setSelectedMockup] = useState(null);
 
     const filteredOrders = ordersData.filter(o => {
         if (orderTypeFilter !== 'All' && o.type !== orderTypeFilter) return false;
@@ -204,7 +119,7 @@ export default function Dashboard() {
                                     <td>{order.id}</td><td>{order.type}</td><td>{order.product}</td>
                                     <td className={order.deadlineWarning ? 'deadline-warning' : ''}>{order.deadline}</td>
                                     <td><span className="status-badge"><span className={`status-dot ${order.statusColor}`} />{order.status}</span></td>
-                                    <td><button className={`view-btn ${order.deadlineWarning ? 'gold' : order.statusColor === 'new' ? 'red' : 'gold'}`} onClick={() => setSelectedOrder(order)}>View</button></td>
+                                    <td><Link href={`/orders/view/${order.id}`} className={`view-btn ${order.deadlineWarning ? 'gold' : order.statusColor === 'new' ? 'red' : 'gold'}`}>View</Link></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -236,7 +151,7 @@ export default function Dashboard() {
                                 <tr key={i}>
                                     <td>{mockup.id}</td><td>{mockup.type}</td><td>{mockup.product}</td><td>{mockup.deadline}</td>
                                     <td><span className="status-badge"><span className={`status-dot ${mockup.statusColor}`} />{mockup.status}</span></td>
-                                    <td><button className="view-btn gold" onClick={() => setSelectedMockup(mockup)}>View</button></td>
+                                    <td><Link href={`/mockup-management/view/${mockup.id}`} className="view-btn gold">View</Link></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -244,10 +159,6 @@ export default function Dashboard() {
                     <div className="pagination"><button className="page-btn">&lt;</button><button className="page-btn active">1</button><button className="page-btn">&gt;</button><span className="page-info">of 25</span></div>
                 </div>
             </div>
-
-            {/* Modals */}
-            {selectedOrder && <OrderDetailModal order={selectedOrder} onClose={() => setSelectedOrder(null)} />}
-            {selectedMockup && <MockupDetailModal mockup={selectedMockup} onClose={() => setSelectedMockup(null)} />}
         </>
     );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const products = [
     { id: 'PRD001', name: 'Welcome Kit', category: 'Corporate', price: '₹2,500', stock: 145, status: 'Active', created: 'Jan 15, 2025' },
@@ -141,7 +142,7 @@ export default function ProductManagement() {
                                 <td>{product.created}</td>
                                 <td>
                                     <div className="action-btns">
-                                        <button className="view-btn gold">Edit</button>
+                                        <Link href={`/product-management/edit/${product.id}`} className="view-btn gold">Edit</Link>
                                         <button className="view-btn red">Delete</button>
                                     </div>
                                 </td>

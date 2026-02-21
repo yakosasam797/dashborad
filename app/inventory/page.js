@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 const inventoryData = [
     { id: 'INV-001', product: 'Welcome Kit', sku: 'WK-100', category: 'Corporate', stock: 145, maxStock: 500, status: 'In Stock', lastUpdated: 'May 15, 2025' },
@@ -78,7 +79,7 @@ export default function InventoryPage() {
                                 <td><div className="stock-indicator"><div className="stock-bar"><div className={`stock-bar-fill ${getStockLevel(item)}`} style={{ width: `${Math.min((item.stock / item.maxStock) * 100, 100)}%` }} /></div></div></td>
                                 <td><span className="status-badge"><span className={`status-dot ${getStatusDot(item.status)}`} />{item.status}</span></td>
                                 <td>{item.lastUpdated}</td>
-                                <td><button className="view-btn gold">Update</button></td>
+                                <td><Link href={`/inventory/update/${item.id}`} className="view-btn gold">Update</Link></td>
                             </tr>
                         ))}
                     </tbody>
