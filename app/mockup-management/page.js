@@ -35,7 +35,7 @@ export default function MockupManagement() {
 
     return (
         <>
-            <div className="page-header"><h1>Mockup Management</h1><button className="btn-primary" style={{ borderRadius: '24px' }}>+ New Mockup</button></div>
+            <div className="page-header"><h1>Mockup Management</h1><Link href="/mockup-management/create" className="btn-primary" style={{ borderRadius: '24px' }}>+ New Mockup</Link></div>
 
             <div className="stat-cards" style={{ gridTemplateColumns: 'repeat(5, 1fr)' }}>
                 <div className="stat-card"><div className="stat-card-top"><span className="stat-card-label">Total</span></div><span className="stat-card-value">{mockupData.length}</span></div>
@@ -68,7 +68,7 @@ export default function MockupManagement() {
                             <tr key={i}>
                                 <td style={{ fontWeight: 600 }}>{m.id}</td><td>{m.type}</td><td>{m.product}</td><td>{m.client}</td><td>{m.designer}</td><td>{m.deadline}</td>
                                 <td><span className="status-badge"><span className={`status-dot ${dot(m.status)}`} />{m.status}</span></td>
-                                <td><div className="action-btns"><Link href={`/mockup-management/view/${m.id}`} className="view-btn gold">View</Link><button className="view-btn red">Upload</button></div></td>
+                                <td><div className="action-btns"><Link href={`/mockup-management/view/${m.id}`} className="view-btn gold">View</Link><Link href={`/mockup-management/view/${m.id}`} className="view-btn" style={{ background: '#FEF2F2', color: '#EF4444' }}>Upload</Link></div></td>
                             </tr>
                         ))}
                     </tbody>

@@ -28,7 +28,7 @@ export default function ProposalsPage() {
 
     return (
         <>
-            <div className="page-header"><h1>Proposals</h1><button className="btn-primary" style={{ borderRadius: '24px' }}>+ Create Proposal</button></div>
+            <div className="page-header"><h1>Proposals</h1><Link href="/proposals/create" className="btn-primary" style={{ borderRadius: '24px' }}>+ Create Proposal</Link></div>
 
             <div className="stat-cards" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
                 <div className="stat-card"><div className="stat-card-top"><span className="stat-card-label">Total</span></div><span className="stat-card-value">{proposals.length}</span></div>
